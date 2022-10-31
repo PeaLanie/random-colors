@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Colors</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="media.css">
+</head>
+<body id="body">
+    <div id="main">
+        <div class="color_code_n_count">
+            <div class="color_code">
+                <div id="hex_code">
+                    <p>Hex Code: </p>
+                    <span>
+                        <span id="coppy" class="coppy">Click to copy!</span>
+                        <span id="hex_code_container"></span>
+                    </span>
+                </div>
+            </div>
+            <div class="count">
+                <p>Colors generated: <span id="color_count">0</span></p>
+            </div>
+        </div>
+        <div class="btns">
+            <button id="randomize_btn">Random</button>
+            <button id="play_btn">Play</button>
+            <button id="pause_btn">Pause</button>
+            <button id="prev">Previous</button>
+        </div>
+        <div class="alert_msg" id="no_prev">
+            <h2>Alert</h2>
+            <p>Please click Random or Play to continue browsing more colors</p>
+            <button type="button" id="no_prev_ok">Ok</button>
+        </div>
+    </div>
+<script src="main.js"></script>
+</body>
+</html>
