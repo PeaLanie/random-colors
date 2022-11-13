@@ -55,6 +55,22 @@ window.addEventListener('load', () => {
         }
         return hex_color
     }
+    function getGray() {
+        function getRandomNumber(any) {
+            return Math.floor(Math.random() * any)
+        }
+        let hex_color = '#'
+        let the_digits = ''
+        const hex_array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F']
+        for (let x = 0; x < 2; x++) {
+            let hex_code = hex_array[getRandomNumber(hex_array.length)]
+            the_digits += hex_code
+        }
+        for (let i = 0; i < 3; i++) {
+            hex_color += the_digits
+        }
+        return hex_color
+    }
 
     const body = document.querySelector('#body')
     const randomize_all = document.querySelector('#randomize_btn')
@@ -62,9 +78,11 @@ window.addEventListener('load', () => {
     const randomize_btn_rg = document.querySelector('#randomize_btn_r-g')
     const randomize_btn_rb = document.querySelector('#randomize_btn_r-b')
     const randomize_btn_gb = document.querySelector('#randomize_btn_g-b')
+    const randomize_btn_grey = document.querySelector('#randomize_btn_grey')
     const play_btn_rg = document.querySelector('#play_btn_r-g')
     const play_btn_rb = document.querySelector('#play_btn_r-b')
     const play_btn_gb = document.querySelector('#play_btn_g-b')
+    const play_btn_grey = document.querySelector('#play_btn_grey')
 
     const randomize_btn_r = document.querySelector('#randomize_btn_r')
     const randomize_btn_g = document.querySelector('#randomize_btn_g')
@@ -80,9 +98,9 @@ window.addEventListener('load', () => {
     const color_count = document.querySelector('#color_count')
     const previous = document.querySelector('#prev')
     let hex_code
-    const colors = []
+    const colors = ['#ffffff']
     let click = 0
-
+    color_count.textContent = colors.length
     let play = setInterval(() => {
         hex_code = getHexCode('', '', '')
         colors.push(hex_code)
@@ -93,14 +111,12 @@ window.addEventListener('load', () => {
         count.style.outline = '2px dashed' + hex_code
         color_count.style.color = hex_code
         color_count.textContent = colors.length
-    }, 2000)
+    }, 5000)
 
     let play_count = 3
 
     randomize_all.addEventListener('click', () => {
-        if (play === play_count) {
-            clearInterval(play)
-        }
+        clearInterval(play)
         hex_code = getHexCode('', '', '')
         colors.push(hex_code)
         body.style.background = hex_code
@@ -113,9 +129,7 @@ window.addEventListener('load', () => {
         click = 0
     })
     randomize_btn_rg.addEventListener('click', () => {
-        if (play === play_count) {
-            clearInterval(play)
-        }
+        clearInterval(play)
         hex_code = getHexCode('', '', '00')
         colors.push(hex_code)
         body.style.background = hex_code
@@ -128,9 +142,7 @@ window.addEventListener('load', () => {
         click = 0
     })
     randomize_btn_rb.addEventListener('click', () => {
-        if (play === play_count) {
-            clearInterval(play)
-        }
+        clearInterval(play)
         hex_code = getHexCode('', '00', '')
         colors.push(hex_code)
         body.style.background = hex_code
@@ -143,9 +155,7 @@ window.addEventListener('load', () => {
         click = 0
     })
     randomize_btn_gb.addEventListener('click', () => {
-        if (play === play_count) {
-            clearInterval(play)
-        }
+        clearInterval(play)
         hex_code = getHexCode('00', '', '')
         colors.push(hex_code)
         body.style.background = hex_code
@@ -159,9 +169,7 @@ window.addEventListener('load', () => {
     })
 
     randomize_btn_r.addEventListener('click', () => {
-        if (play === play_count) {
-            clearInterval(play)
-        }
+        clearInterval(play)
         hex_code = getHexCode('', '00', '00')
         colors.push(hex_code)
         body.style.background = hex_code
@@ -174,9 +182,7 @@ window.addEventListener('load', () => {
         click = 0
     })
     randomize_btn_g.addEventListener('click', () => {
-        if (play === play_count) {
-            clearInterval(play)
-        }
+        clearInterval(play)
         hex_code = getHexCode('00', '', '00')
         colors.push(hex_code)
         body.style.background = hex_code
@@ -189,9 +195,7 @@ window.addEventListener('load', () => {
         click = 0
     })
     randomize_btn_b.addEventListener('click', () => {
-        if (play === play_count) {
-            clearInterval(play)
-        }
+        clearInterval(play)
         hex_code = getHexCode('00', '00', '')
         colors.push(hex_code)
         body.style.background = hex_code
@@ -203,16 +207,22 @@ window.addEventListener('load', () => {
         color_count.textContent = colors.length
         click = 0
     })
-
-
-
-
-
+    randomize_btn_grey.addEventListener('click', () => {
+        clearInterval(play)
+        hex_code = getGray()
+        colors.push(hex_code)
+        body.style.background = hex_code
+        color_code.style.outline = '2px dashed' + hex_code
+        hex_code_container.textContent = hex_code
+        hex_code_container.style.color = hex_code
+        count.style.outline = '2px dashed' + hex_code
+        color_count.style.color = hex_code
+        color_count.textContent = colors.length
+        click = 0
+    })
 
     play_btn_for_all.addEventListener('click', () => {
-        if (play === play_count) {
-            clearInterval(play)
-        }
+        clearInterval(play)
         play = setInterval(() => {
             hex_code = getHexCode('', '', '')
             colors.push(hex_code)
@@ -226,13 +236,9 @@ window.addEventListener('load', () => {
         }, 2000)
         play_count++
         click = 0
-        console.log(play)
-        console.log(play_count)
     })
     play_btn_rg.addEventListener('click', () => {
-        if (play === play_count) {
-            clearInterval(play)
-        }
+        clearInterval(play)
         play = setInterval(() => {
             hex_code = getHexCode('', '', '00')
             colors.push(hex_code)
@@ -246,12 +252,9 @@ window.addEventListener('load', () => {
         }, 2000)
         play_count++
         click = 0
-        console.log(play)
     })
     play_btn_rb.addEventListener('click', () => {
-        if (play === play_count) {
-            clearInterval(play)
-        }
+        clearInterval(play)
         play = setInterval(() => {
             hex_code = getHexCode('', '00', '')
             colors.push(hex_code)
@@ -267,9 +270,7 @@ window.addEventListener('load', () => {
         click = 0
     })
     play_btn_gb.addEventListener('click', () => {
-        if (play === play_count) {
-            clearInterval(play)
-        }
+        clearInterval(play)
         play = setInterval(() => {
             hex_code = getHexCode('00', '', '')
             colors.push(hex_code)
@@ -284,11 +285,26 @@ window.addEventListener('load', () => {
         play_count++
         click = 0
     })
+    play_btn_grey.addEventListener('click', () => {
+        clearInterval(play)
+        play = setInterval(() => {
+            hex_code = getGray()
+            colors.push(hex_code)
+            body.style.background = hex_code
+            color_code.style.outline = '2px dashed' + hex_code
+            hex_code_container.textContent = hex_code
+            hex_code_container.style.color = hex_code
+            count.style.outline = '2px dashed' + hex_code
+            color_count.style.color = hex_code
+            color_count.textContent = colors.length
+        }, 2000)
+
+        play_count++
+        click = 0
+    })
 
     play_btn_r.addEventListener('click', () => {
-        if (play === play_count) {
-            clearInterval(play)
-        }
+        clearInterval(play)
         play = setInterval(() => {
             hex_code = getHexCode('', '00', '00')
             colors.push(hex_code)
@@ -304,9 +320,7 @@ window.addEventListener('load', () => {
         click = 0
     })
     play_btn_g.addEventListener('click', () => {
-        if (play === play_count) {
-            clearInterval(play)
-        }
+        clearInterval(play)
         play = setInterval(() => {
             hex_code = getHexCode('00', '', '00')
             colors.push(hex_code)
@@ -322,9 +336,7 @@ window.addEventListener('load', () => {
         click = 0
     })
     play_btn_b.addEventListener('click', () => {
-        if (play === play_count) {
-            clearInterval(play)
-        }
+        clearInterval(play)
         play = setInterval(() => {
             hex_code = getHexCode('00', '00', '')
             colors.push(hex_code)
@@ -340,18 +352,12 @@ window.addEventListener('load', () => {
         click = 0
     })
     
-    
-    
-
-
-
-
     pause_btn.addEventListener('click', () => {
         clearInterval(play) 
     })
     previous.addEventListener('click', (e) => {
         clearInterval(play)
-        if (play == play_count && click == 0) {
+        if (click == 0) {
             
             let prev = colors.slice(-2, -1)
 
@@ -410,6 +416,4 @@ window.addEventListener('load', () => {
         input_el.parentNode.removeChild(input_el)
         coppy.classList.remove('coppy_visible')
     })
-    
-
 })

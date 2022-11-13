@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div class="count">
-                <p>Colors generated: <span id="color_count">0</span></p>
+                <p>Colors generated: <span id="color_count"></span></p>
             </div>
         </div>
         <div class="pause_prev btns">
@@ -30,39 +30,46 @@
         </div>
         <div class="btns options">
             <div class="full_colors all_options">
-                <h2>R-g-b</h2>
+                <h2><span class="red">R</span>-<span class="green">g</span>-<span class="blue">b</span></h2>
                 <button id="randomize_btn"><i class="fa-solid fa-shuffle"></i></button>
                 <button id="play_btn"><i class="fa-solid fa-play"></i></button>
             </div>
             <div class="red_green all_options">
-                <h2>R-G-?</h2>
+                <h2><span
+ class="red">r</span>-<span class="green">g</span>-?</h2>
                 <button id="randomize_btn_r-g"><i class="fa-solid fa-shuffle"></i></button>
                 <button id="play_btn_r-g"><i class="fa-solid fa-play"></i></button>
             </div>
             <div class="red_blue all_options">
-                <h2>R-?-B</h2>
+                <h2><span
+ class="red">r</span>-?-<span class="blue">b</span></h2>
                 <button id="randomize_btn_r-b"><i class="fa-solid fa-shuffle"></i></button>
                 <button id="play_btn_r-b"><i class="fa-solid fa-play"></i></button>
             </div>
             <div class="gree_blue all_options">
-                <h2>?-G-B</h2>
+                <h2>?-<span class="green">g</span>-<span class="blue">b</span></h2>
                 <button id="randomize_btn_g-b"><i class="fa-solid fa-shuffle"></i></button>
                 <button id="play_btn_g-b"><i class="fa-solid fa-play"></i></button>
             </div>
             <div class="red_green all_options">
-                <h2>Shades > r</h2>
+                <h2>Shades > <span class="red">r</span></h2>
                 <button id="randomize_btn_r"><i class="fa-solid fa-shuffle"></i></button>
                 <button id="play_btn_r"><i class="fa-solid fa-play"></i></button>
             </div>
             <div class="red_blue all_options">
-                <h2>Shades > g</h2>
+                <h2>Shades > <span class="green">g</span></h2>
                 <button id="randomize_btn_g"><i class="fa-solid fa-shuffle"></i></button>
                 <button id="play_btn_g"><i class="fa-solid fa-play"></i></button>
             </div>
             <div class="gree_blue all_options">
-                <h2>Shades > b</h2>
+                <h2>Shades > <span class="blue">b</span></h2>
                 <button id="randomize_btn_b"><i class="fa-solid fa-shuffle"></i></button>
                 <button id="play_btn_b"><i class="fa-solid fa-play"></i></button>
+            </div>
+            <div class="all_options">
+                <h2>Shades > <span class="grey">g</span></h2>
+                <button id="randomize_btn_grey"><i class="fa-solid fa-shuffle"></i></button>
+                <button id="play_btn_grey"><i class="fa-solid fa-play"></i></button>
             </div>
         </div>
         <div class="alert_msg" id="no_prev">
@@ -71,6 +78,7 @@
             <button type="button" id="no_prev_ok">Ok</button>
         </div>
     </div>
+<script src="jquery.js"></script>
 <script src="main.js"></script>
 </body>
 </html>
